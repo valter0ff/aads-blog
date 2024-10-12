@@ -1,0 +1,20 @@
+linters:
+  LineLength:
+    enabled: true
+    max: 180
+
+  InlineStyles:
+    enabled: false
+
+  ConsecutiveSilentScripts:
+    enabled: false
+
+  RuboCop:
+    enabled: true
+    ignored_cops:
+      [
+        "Style/IfUnlessModifier",
+        "Rails/OutputSafety",
+        "Layout/ArgumentAlignment",
+        "Layout/HashAlignment",
+      ]

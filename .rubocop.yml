@@ -1,0 +1,84 @@
+require:
+  - "rubocop-performance"
+  - "rubocop-rspec"
+  - "rubocop-rails"
+  - "rubocop-capybara"
+
+AllCops:
+  TargetRubyVersion: 3.2.1
+  NewCops: enable
+  Exclude:
+    - "db/**/*"
+    - "script/**/*"
+    - "bin/**/*"
+    - "vendor/**/*"
+
+RSpec/DescribeClass:
+  Exclude:
+    - "spec/features/**/*"
+
+RSpec/AnyInstance:
+  Exclude:
+    - "spec/controllers/**/*"
+
+RSpec/LetSetup:
+  Enabled: false
+
+RSpec/MessageSpies:
+  EnforcedStyle: receive
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 10
+
+RSpec/MultipleExpectations:
+  Max: 15
+
+RSpec/ExampleLength:
+  Max: 15
+
+RSpec/NestedGroups:
+  Max: 4
+
+Metrics/ModuleLength:
+  Exclude:
+    - "spec/**/*"
+
+Style/Documentation:
+  Enabled: false
+
+Rails/FilePath:
+  Enabled: false
+
+Rails/RakeEnvironment:
+  Enabled: false
+
+Rails/LexicallyScopedActionFilter:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - "config/initializers/devise.rb"
+    - "config/initializers/simple_form.rb"
+
+Lint/MissingSuper:
+  Enabled: false
+
+Lint/AmbiguousBlockAssociation:
+  AllowedMethods: [change]
+
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*"
+    - "config/**/*"
+    - "Rakefile"
+    - "**/*.rake"
+    - "config/routes.rb"
+
+Metrics/AbcSize:
+  Max: 18
+  Exclude:
+    - "spec/support/pages/**/*"
+
+Style/HashSyntax:
+  EnforcedShorthandSyntax: never

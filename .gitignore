@@ -38,3 +38,9 @@
 !/app/assets/builds/.keep
 
 /node_modules
+
+# Vscode config folder
+/.vscode
+
+# Ignore test coverage info
+/coverage/*

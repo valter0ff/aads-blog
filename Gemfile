@@ -1,65 +1,109 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
 
-ruby "3.2.1"
+source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.1.4"
+ruby(File.read(File.join(File.dirname(__FILE__), '.ruby-version')).strip)
 
-# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
+# System
+gem 'bootsnap', require: false
+gem 'cssbundling-rails'
+gem 'jbuilder'
+gem 'jsbundling-rails'
+gem 'pg', '~> 1.1'
+gem 'puma', '>= 5.0'
+gem 'rails', '~> 7.1.4'
+gem 'sprockets-rails'
+gem 'stimulus-rails'
+gem 'turbo-rails'
 
-# Use postgresql as the database for Active Record
-gem "pg", "~> 1.1"
+# Views
+gem 'haml-rails', '~> 2.0'
+gem 'simple_form', '~> 5.1.0'
 
-# Use the Puma web server [https://github.com/puma/puma]
-gem "puma", ">= 5.0"
+# Authentication
+gem 'devise', '~> 4.9.0'
 
-# Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
-gem "jsbundling-rails"
+# Decorators/View-Models for Rails Applications
+gem 'draper'
 
-# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
+# Pagination
+gem 'pagy', '~> 5.10.1'
 
-# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem "stimulus-rails"
+# Migration validation
+gem 'strong_migrations'
 
-# Bundle and process CSS [https://github.com/rails/cssbundling-rails]
-gem "cssbundling-rails"
+# Redis
+# gem 'redis'
+# gem 'redis-client'
 
-# Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem "jbuilder"
+# Admin panel
+# gem 'activeadmin'
+# gem 'activeadmin_addons', '~> 1.9.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
-# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
-# gem "kredis"
-
-# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[ windows jruby ]
-
-# Reduces boot times through caching; required in config/boot.rb
-gem "bootsnap", require: false
-
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# Trailblazer bundle
+# gem 'dry-auto_inject', '~> 1.0.1'
+# gem 'dry-container', '~> 0.11'
+# gem 'dry-matcher', '~> 1.0'
+# gem 'dry-monads', '~> 1.6'
+# gem 'dry-schema', '1.13.4'
+# gem 'dry-validation', '1.10'
+# gem 'reform', '~> 2.6'
+# gem 'trailblazer', '~> 2.1.3'
+
+# File attachments
+# gem 'image_processing'
+# gem 'mini_magick'
+# gem 'shrine', '~> 3.6.0'
+
 group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri windows ]
+  gem 'bullet'
+  gem 'factory_bot_rails'
+  gem 'ffaker'
+  gem 'i18n-tasks', '~> 1.0.14'
+  gem 'rspec-rails'
+
+  # Code quality
+  gem 'brakeman', require: false
+  gem 'debug', platforms: %i[mri windows]
+  gem 'fasterer', require: false
+  gem 'haml_lint', require: false
+  gem 'lefthook', '~> 1.7.2'
+  gem 'rails_best_practices', require: false
+  gem 'rails_sql_prettifier'
+  gem 'rubocop', '~> 1.26', require: false
+  gem 'rubocop-capybara', require: false
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'simplecov'
 end
 
 group :development do
-  # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem "web-console"
-
-  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  # gem "rack-mini-profiler"
-
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
+  gem 'activerecord-import'
+  gem 'annotate'
+  gem 'awesome_print'
+  gem 'better_errors'
+  gem 'database_consistency', require: false
+  gem 'ruby-lsp'
+  gem 'spring'
+  gem 'web-console'
 end
 
+group :test do
+  gem 'capybara'
+  gem 'capybara-screenshot'
+  gem 'cuprite'
+  gem 'database_cleaner-active_record'
+  gem 'rack_session_access'
+  gem 'rails-controller-testing'
+  gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
+  gem 'site_prism'
+  gem 'webdrivers'
+end

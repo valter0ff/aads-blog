@@ -1,0 +1,16 @@
+pre-commit:
+  parallel: true
+  commands:
+    brakeman:
+      run: bundle exec brakeman -c config/brakeman.yml --only-files {staged_files} .
+    fasterer:
+      glob: "**/*.rb"
+      run: bundle exec fasterer {staged_files}
+    i18n:
+      run: bundle exec i18n-tasks health
+    rubocop:
+      glob: "{*.{ru,rb,rake,gemspec},Gemfile,Rakefile}"
+      run: bundle exec rubocop --parallel --format=emacs --force-exclusion --display-cop-names {staged_files}
+    haml-lint:
+      glob: "**/*.haml"
+      run: bundle exec haml-lint {staged_files}

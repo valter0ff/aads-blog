@@ -1,0 +1,33 @@
+.text-center.p-5.my-4.bg-light.rounded-3.shadow-sm
+  .form-signin.w-100.m-auto
+    = image_tag 'logo.png', class: 'mb-4', size: '80'
+    %h1.h3.mb-3.fw-normal.page_title= t('.sign_up')
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: false }) do |f|
+      .form-floating
+        = f.input_field :email, autofocus: true, autocomplete: 'email', id: 'email',
+                            class: 'form-control', placeholder: t('.email'), type: 'email'
+        = f.label :email, t('.email'), class: 'form-label email-label'
+        = f.full_error :email, class: 'text-danger'
+      .form-floating
+        = f.input_field :first_name, autofocus: true, autocomplete: 'first_name', id: 'first_name',
+                            class: 'form-control form-signup-field', placeholder: t('.first_name'), type: 'string'
+        = f.label :first_name, t('.first_name'), class: 'form-label first-name-label'
+        = f.full_error :first_name, class: 'text-danger'
+      .form-floating
+        = f.input_field :last_name, autofocus: true, autocomplete: 'last_name', id: 'last_name',
+                            class: 'form-control form-signup-field', placeholder: t('.last_name'), type: 'string'
+        = f.label :last_name, t('.last_name'), class: 'form-label last-name-label'
+        = f.full_error :last_name, class: 'text-danger'
+      .form-floating
+        = f.input_field :password, autocomplete: 'new-password', id: 'password',
+                        class: 'form-control form-signup-field', placeholder: t('.password'), type: 'password'
+        = f.label :password, t('.password'), class: 'form-label password-label'
+        = f.full_error :password, class: 'text-danger'
+      .form-floating
+        = f.input_field :password_confirmation, autocomplete: 'new-password', id: 'password-confirmation',
+                        class: 'form-control form-signin-password', placeholder: t('.password_confirmation'), type: 'password'
+        = f.label :password_confirmation, t('.password_confirmation'), class: 'form-label password-confirmation-label'
+        = f.full_error :password_confirmation, class: 'text-danger'
+      .form-actions.mb-3
+        = f.submit t('.sign_up'), class: 'w-100 btn btn-lg btn-primary'
+  = render 'devise/shared/links'

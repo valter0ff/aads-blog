@@ -18,3 +18,9 @@ linters:
         "Layout/ArgumentAlignment",
         "Layout/HashAlignment",
       ]
+
+  ClassesBeforeIds:
+    EnforcedStyle: "id"
+
+  IdNames:
+    enabled: false

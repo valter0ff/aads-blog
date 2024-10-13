@@ -1,0 +1,18 @@
+.text-center.p-5.my-4.bg-light.rounded-3.shadow-sm
+  .form-signin.w-100.m-auto
+    = image_tag 'logo.png', class: 'mb-4', size: '80'
+    %h1.h3.mb-3.fw-normal.page_title= t('.log_in')
+    = simple_form_for(:user, url: session_path(resource_name), data: { turbo: false }) do |f|
+      .form-floating
+        = f.input_field :email, autofocus: true, autocomplete: 'email', id: 'email',
+                        class: 'form-control', placeholder: t('.email'), type: 'email'
+        = f.label :email, t('.email'), class: 'form-label phone-number-label'
+      .form-floating
+        = f.input_field :password, autocomplete: 'current-password', id: 'password',
+                      class: 'form-control form-signin-password', placeholder: t('.password'), type: 'password'
+        = f.label :password, t('.password'), class: 'form-label password-label'
+      .checkbox.mb-3
+        = f.input :remember_me, as: :boolean, label: t('.remember_me'), input_html: { class: 'mx-2' } if devise_mapping.rememberable?
+      .form-actions.mb-3
+        = f.submit t('.log_in'), class: 'w-100 btn btn-lg btn-primary'
+  = render 'devise/shared/links'

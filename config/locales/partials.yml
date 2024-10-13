@@ -1,0 +1,14 @@
+---
+en:
+  partials:
+    footer:
+      company: AADS Company
+    head:
+      window_title: AADS Simple Blog App
+    header:
+      home_link: Homepage
+      login: Login
+      logout: Logout
+      my_posts: My posts
+      sign_up: Sign up
+      site_title: Simple Blog App

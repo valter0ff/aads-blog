@@ -1,0 +1,8 @@
+.p-5.mt-4.bg-light.rounded-3.shadow-sm
+  .row
+    .col.text-center.general-title
+      %h2= t('.general_title')
+  - if user_signed_in?
+    .row.mt-3
+      .col
+        = link_to t('.find_author'), '#', class: 'w-100 btn btn-lg btn-outline-primary doctors-link'

@@ -1,0 +1,10 @@
+!!!
+%html
+  = render 'partials/head'
+
+  %body
+    = render 'partials/header', cached: true, categories: @categories
+    %main.container
+      = render 'partials/flash_messages'
+      = yield
+    = render 'partials/footer', cached: true

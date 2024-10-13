@@ -1,0 +1,16 @@
+%footer.bg-light
+  .container.d-flex.flex-wrap.justify-content-between.align-items-center.py-3.my-4
+    .col-md-4.d-flex.align-items-center
+      = link_to root_path, class: 'mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1 home-link' do
+        = image_tag 'logo.png', size: '30'
+        %span.mb-3.mb-md-0.text-muted= t('.company')
+    %ul.nav.col-md-4.justify-content-end.list-unstyled.d-flex
+      %li.ms-3
+        = link_to '#', class: 'text-muted' do
+          %i.bi.bi-twitter.fs-3.text-body
+      %li.ms-3
+        = link_to '#', class: 'text-muted' do
+          %i.bi.bi-facebook.fs-3.text-body
+      %li.ms-3
+        = link_to '#', class: 'text-muted' do
+          %i.bi.bi-instagram.fs-3.text-body

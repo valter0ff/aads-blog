@@ -1,0 +1,20 @@
+---
+en:
+  posts:
+    create:
+      success: Post was successfully created.
+    index:
+      no_posts_found: No posts found
+      posts_by: Posts by %{author}
+    new:
+      back: Back
+      enter_body: Enter body
+      enter_body_up_to: Enter body up to 1500 characters
+      enter_title: Enter title
+      enter_title_up_to: Enter title up to 80 characters
+      new_post: New post
+      save: Save
+    show:
+      author: 'Author: %{author}'
+      back: Back
+      comment: comment

@@ -1,0 +1,10 @@
+.p-5.mt-4.bg-light.rounded-3.shadow-sm
+  .container
+    %h1.text-center.text-primary= @post.title
+    %h6.text-muted.text-center= t('.author', author: @post.author)
+    %hr
+    .mt-4
+      %p= @post.body
+    .mt-4.text-center
+      = link_to t('.comment'), '#', class: 'btn btn-warning'
+      = link_to t('.back'), :back, class: 'btn btn-secondary'

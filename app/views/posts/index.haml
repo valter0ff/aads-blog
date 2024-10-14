@@ -1,0 +1,14 @@
+.bg-light.py-5.my-2
+  %h2.text-center.text-primary= t('.posts_by', author: @user.decorate.full_name)
+.mb-4
+  .row.justify-content-md-center
+    .col-8.text-center
+      - if @posts.any?
+        %ul.list-group
+          = render @posts
+      - else
+        .alert.alert-warning.text-center
+          = t('.no_posts_found')
+    - if @pagy.pages > 1
+      .col-10.justify-content-center.pagination.mt-4
+        != pagy_bootstrap_nav @pagy

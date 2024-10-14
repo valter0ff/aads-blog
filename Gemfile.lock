@@ -124,6 +124,9 @@ GEM
     coderay (1.1.3)
     concurrent-ruby (1.3.4)
     connection_pool (2.4.1)
+    counter_culture (3.7.0)
+      activerecord (>= 4.2)
+      activesupport (>= 4.2)
     crass (1.0.6)
     cssbundling-rails (1.4.1)
       railties (>= 6.0.0)
@@ -375,6 +378,8 @@ GEM
       parser (>= 3.3.1.0)
     rubocop-capybara (2.21.0)
       rubocop (~> 1.41)
+    rubocop-factory_bot (2.25.1)
+      rubocop (~> 1.41)
     rubocop-performance (1.22.1)
       rubocop (>= 1.48.1, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
@@ -403,7 +408,7 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     sexp_processor (4.17.2)
-    shoulda-matchers (5.1.0)
+    shoulda-matchers (6.4.0)
       activesupport (>= 5.2.0)
     simple_form (5.1.0)
       actionpack (>= 5.2)
@@ -485,6 +490,7 @@ DEPENDENCIES
   bullet
   capybara
   capybara-screenshot
+  counter_culture
   cssbundling-rails
   cuprite
   database_cleaner-active_record
@@ -512,12 +518,13 @@ DEPENDENCIES
   rspec-rails
   rubocop (~> 1.26)
   rubocop-capybara
+  rubocop-factory_bot
   rubocop-performance
   rubocop-rails
   rubocop-rspec
   ruby-lsp
   selenium-webdriver
-  shoulda-matchers
+  shoulda-matchers (~> 6.0)
   simple_form (~> 5.1.0)
   simplecov
   site_prism

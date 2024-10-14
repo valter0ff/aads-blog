@@ -1,0 +1,9 @@
+%li.list-group-item.d-flex.justify-content-between.align-items-start
+  .post-details.text-start
+    %h5= link_to post.title, post_path(post), class: 'text-primary'
+    %p.text-muted= truncate(post.body, length: 100)
+
+  .post-meta.text-end
+    %div
+      %span.badge.bg-secondary= post.author
+      %span.badge.bg-info= l(post.created_at, format: :short)

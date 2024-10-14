@@ -6,6 +6,7 @@ ruby(File.read(File.join(File.dirname(__FILE__), '.ruby-version')).strip)
 
 # System
 gem 'bootsnap', require: false
+gem 'counter_culture'
 gem 'cssbundling-rails'
 gem 'jbuilder'
 gem 'jsbundling-rails'
@@ -67,6 +68,7 @@ group :development, :test do
   gem 'ffaker'
   gem 'i18n-tasks', '~> 1.0.14'
   gem 'rspec-rails'
+  gem 'shoulda-matchers', '~> 6.0'
 
   # Code quality
   gem 'brakeman', require: false
@@ -78,6 +80,7 @@ group :development, :test do
   gem 'rails_sql_prettifier'
   gem 'rubocop', '~> 1.26', require: false
   gem 'rubocop-capybara', require: false
+  gem 'rubocop-factory_bot', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
@@ -103,7 +106,6 @@ group :test do
   gem 'rack_session_access'
   gem 'rails-controller-testing'
   gem 'selenium-webdriver'
-  gem 'shoulda-matchers'
   gem 'site_prism'
   gem 'webdrivers'
 end

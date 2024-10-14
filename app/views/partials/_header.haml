@@ -8,13 +8,19 @@
           %li.nav-item
             = link_to t('.home_link'), root_path, class: 'nav-link active home-link'
           - if user_signed_in?
+            %li.nav-item
+              = link_to t('.feed'), '#', class: 'nav-link active home-link'
+            %li.nav-item
+              = link_to t('.find_author'), authors_path, class: 'nav-link active home-link'
+            %li.nav-item
+              = link_to t('.new_post'), new_post_path, class: 'nav-link active home-link'
             %li.nav-item.dropdown
               = link_to current_user.first_name, '#',
                   aria: { expanded: false, haspopup: true },
                   data: { 'bs-toggle': 'dropdown' }, role: 'button',
                   class: 'account-menu-button nav-link dropdown-toggle'
               %ul.dropdown-menu.account-menu
-                %li= link_to t('.my_posts'), '#', class: 'appointments-link dropdown-item'
+                %li= link_to t('.my_posts'), posts_path, class: 'appointments-link dropdown-item'
                 %li.divider{ role: 'separator' }
                 %li= link_to t('.logout'),
                   destroy_user_session_path, method: :delete,

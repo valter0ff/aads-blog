@@ -9,6 +9,7 @@
 #  encrypted_password  :string           default(""), not null
 #  first_name          :string           default(""), not null
 #  last_name           :string           default(""), not null
+#  posts_count         :integer          default(0)
 #  remember_created_at :datetime
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
@@ -30,4 +31,6 @@ class User < ApplicationRecord
                        format: { with: Constants::User::PASSWORD_REGEXP }
   validates :first_name, presence: true
   validates :last_name, presence: true
+
+  has_many :posts, dependent: :destroy
 end

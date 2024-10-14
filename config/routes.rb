@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   end
 
   root 'homepage#index'
+  resources :users, only: %i[index show], path: 'authors', as: 'authors'
+  resources :posts, only: %i[new index show create]
 end

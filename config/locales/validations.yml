@@ -12,6 +12,6 @@ en:
               invalid: 'format is incorrect. Left part can consists of: a-z, A-Z, 0-9, dot or one of !#$%&''*+-/=?^_`{|}~, right part: numeric and alphabetical with dot'
               taken: has already been taken
             password:
-              invalid: 'format is incorrect. Please follow the next rules: use at least 8 characters, 1 upper case letter and at least 1 digit, without spaces inside'
+              invalid: 'format is incorrect. Please follow the next rules: use at least 8 characters, at least 1 lowercase letter, 1 uppercase letter and 1 digit, without spaces inside'
             password_confirmation:
               confirmation: doesn't match Password

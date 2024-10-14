@@ -1,0 +1,12 @@
+%table.table
+  %thead
+    %tr
+      %th{ scope: 'col' }= t('.author')
+      %th{ scope: 'col' }= t('.action')
+  %tbody
+    - users.each do |user|
+      %tr
+        %td{ scope: 'row' }= user.full_name
+        %td= link_to t('.show_posts', count: user.posts_count), posts_path(user_id: user.id), class: 'btn btn-link'
+        %td= link_to t('.subscribe'), '#', class: 'btn btn-link'
+        %td= link_to t('.unsubscribe'), '#', class: 'btn btn-link'

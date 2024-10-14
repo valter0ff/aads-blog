@@ -2,5 +2,6 @@
 en:
   homepage:
     index:
+      create_post: Create post
       find_author: Find author
       general_title: Welocme to AADS Simple Blog App

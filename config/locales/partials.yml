@@ -6,9 +6,12 @@ en:
     head:
       window_title: AADS Simple Blog App
     header:
+      feed: Feed
+      find_author: Find author
       home_link: Homepage
       login: Login
       logout: Logout
       my_posts: My posts
+      new_post: New post
       sign_up: Sign up
       site_title: Simple Blog App

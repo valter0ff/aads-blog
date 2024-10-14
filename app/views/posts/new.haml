@@ -1,0 +1,20 @@
+.p-5.mt-4.bg-light.rounded-3
+  %h2.text-center.text-primary.page-title= t('.new_post')
+.mb-4
+  .row
+    .col-12
+      = simple_form_for @post, url: posts_path, data: { turbo: false } do |f|
+        .row.g-4.justify-content-md-center
+          .col-8
+            = f.label :title, t('.enter_title'), class: 'form-label title-label'
+            = f.input_field :title, as: :string, autocomplete: 'title',
+              id: 'title', class: 'form-control title-input', placeholder: t('.enter_title_up_to')
+            = f.full_error :title, class: 'text-danger', id: 'title-error'
+          .col-8
+            = f.label :body, t('.enter_body'), class: 'form-label body-label'
+            = f.input_field :body, as: :text, autocomplete: 'body',
+              id: 'body', class: 'form-control body-input', placeholder: t('.enter_body_up_to')
+            = f.full_error :body, class: 'text-danger', id: 'body-error'
+          .col-8.text-center
+            = link_to t('.back'), :back, class: 'btn btn-primary back-link'
+            = f.submit t('.save'), class: 'btn btn-primary mb-35 save-btn'

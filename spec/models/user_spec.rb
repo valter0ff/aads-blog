@@ -9,6 +9,7 @@
 #  encrypted_password  :string           default(""), not null
 #  first_name          :string           default(""), not null
 #  last_name           :string           default(""), not null
+#  posts_count         :integer          default(0)
 #  remember_created_at :datetime
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
@@ -27,6 +28,7 @@ RSpec.describe User, type: :model do
     it { is_expected.to have_db_column(:first_name).of_type(:string) }
     it { is_expected.to have_db_column(:last_name).of_type(:string) }
     it { is_expected.to have_db_column(:remember_created_at).of_type(:datetime) }
+    it { is_expected.to have_db_column(:posts_count).of_type(:integer) }
   end
 
   describe 'database indexes exists' do
@@ -66,14 +68,7 @@ RSpec.describe User, type: :model do
     end
   end
 
-  # describe 'associatios' do
-  #   it { is_expected.to have_one(:shipping_address).dependent(:destroy) }
-  #   it { is_expected.to have_one(:billing_address).dependent(:destroy) }
-  #   it { is_expected.to have_many(:reviews).dependent(:destroy) }
-  #   it { is_expected.to have_many(:orders) }
-  #   it { is_expected.to have_one(:picture).dependent(:destroy) }
-  #   it { is_expected.to accept_nested_attributes_for(:picture).allow_destroy(true) }
-  #   it { is_expected.to accept_nested_attributes_for(:billing_address).update_only(true) }
-  #   it { is_expected.to accept_nested_attributes_for(:shipping_address).update_only(true) }
-  # end
+  describe 'associatios' do
+    it { is_expected.to have_many(:posts).dependent(:destroy) }
+  end
 end

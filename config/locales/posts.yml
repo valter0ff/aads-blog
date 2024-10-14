@@ -4,8 +4,11 @@ en:
     create:
       success: Post was successfully created.
     index:
+      my_posts: My posts
       no_posts_found: No posts found
       posts_by: Posts by %{author}
+      subscribe: Subscribe
+      unsubscribe: Unsubscribe
     new:
       back: Back
       enter_body: Enter body

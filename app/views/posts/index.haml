@@ -1,6 +1,15 @@
 .bg-light.py-5.my-2
-  %h2.text-center.text-primary= t('.posts_by', author: @user.decorate.full_name)
-.mb-4
+  - if @user == current_user
+    %h2.text-center.text-primary= t('.my_posts')
+  - else
+    %h2.text-center.text-primary= t('.posts_by', author: @user.decorate.full_name)
+    .text-center
+      - if subscribed_to?(@user)
+        %td= button_to t('.unsubscribe'), subscription_path(@user), method: :delete, data: { turbo: false },
+          class: 'btn btn-link text-danger fs-5'
+      - else
+        %td= button_to t('.subscribe'), subscriptions_path(id: @user.id), method: :post, data: { turbo: false },
+          class: 'btn btn-link text-primary fs-5'
   .row.justify-content-md-center
     .col-8.text-center
       - if @posts.any?

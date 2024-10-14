@@ -4,8 +4,6 @@ en:
     index:
       authors: Authors
     users_table:
-      action: Action
-      author: Author
       show_posts: Show posts (%{count})
       subscribe: Subscribe
       unsubscribe: Unsubscribe

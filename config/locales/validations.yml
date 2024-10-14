@@ -6,6 +6,10 @@ en:
         blank: can't be blank
         not_found: Record not found
       models:
+        subscription:
+          attributes:
+            subscriber_id:
+              taken_with_scope: You are already subscribed
         user:
           attributes:
             email:

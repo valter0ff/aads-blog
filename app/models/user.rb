@@ -33,4 +33,11 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   has_many :posts, dependent: :destroy
+  # Users that the current user is subscribed to
+  has_many :subscriptions, foreign_key: :subscriber_id, dependent: :destroy, inverse_of: :subscriber
+  has_many :subscribed_to_users, through: :subscriptions, source: :subscribed_to
+  # Users that are subscribed to the current user
+  has_many :subscribers_associations, foreign_key: :subscribed_to_id, class_name: 'Subscription', dependent: :destroy,
+                                      inverse_of: :subscribed_to
+  has_many :subscribers, through: :subscribers_associations, source: :subscriber
 end

@@ -1,0 +1,9 @@
+---
+en:
+  subscriptions:
+    already_subscribed: You are already subscribed to this author.
+    author_not_found: Author not found.
+    not_subscribed: You are not subscribed to this author.
+    self_subscription_error: You cannot subscribe to yourself.
+    subscribed: You have subscribed to %{user_name}.
+    unsubscribed: You have unsubscribed from %{user_name}.

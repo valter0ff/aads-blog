@@ -1,7 +1,5 @@
 .bg-light.py-5.my-2
-  %h2.text-center.text-primary
-    - users_type_key = defined?(users_type) ? users_type : 'authors'
-    = t(".#{users_type_key}")
+  %h2.text-center.text-primary= t(".#{users_type}")
 .mb-4
   .row.justify-content-md-center
     .col-8.text-center

@@ -33,35 +33,6 @@ gem 'pagy', '~> 5.10.1'
 # Migration validation
 gem 'strong_migrations'
 
-# Redis
-# gem 'redis'
-# gem 'redis-client'
-
-# Admin panel
-# gem 'activeadmin'
-# gem 'activeadmin_addons', '~> 1.9.0'
-
-# Use Redis adapter to run Action Cable in production
-# gem "redis", ">= 4.0.1"
-
-# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
-
-# Trailblazer bundle
-# gem 'dry-auto_inject', '~> 1.0.1'
-# gem 'dry-container', '~> 0.11'
-# gem 'dry-matcher', '~> 1.0'
-# gem 'dry-monads', '~> 1.6'
-# gem 'dry-schema', '1.13.4'
-# gem 'dry-validation', '1.10'
-# gem 'reform', '~> 2.6'
-# gem 'trailblazer', '~> 2.1.3'
-
-# File attachments
-# gem 'image_processing'
-# gem 'mini_magick'
-# gem 'shrine', '~> 3.6.0'
-
 group :development, :test do
   gem 'bullet'
   gem 'factory_bot_rails'

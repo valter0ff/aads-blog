@@ -81,6 +81,3 @@ Metrics/AbcSize:
   Max: 18
   Exclude:
     - "spec/support/pages/**/*"
-
-Style/HashSyntax:
-  EnforcedShorthandSyntax: never

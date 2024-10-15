@@ -4,6 +4,7 @@ en:
     create:
       success: Post was successfully created.
     index:
+      back: Back
       my_posts: My posts
       no_posts_found: No posts found
       posts_by: Posts by %{author}

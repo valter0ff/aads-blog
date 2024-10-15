@@ -2,8 +2,8 @@
 en:
   users:
     index:
-      authors: Authors
-      subscribed_to: My subscriptions
+      all_authors: All authors
+      subscribed_to_users: My subscriptions
       subscribers: My subscribers
     users_table:
       show_posts: Show posts (%{count})

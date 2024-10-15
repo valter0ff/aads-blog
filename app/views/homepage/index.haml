@@ -6,6 +6,6 @@
     .row.mt-3.justify-content-center
       .col-auto
         .d-flex.justify-content-between
-          = link_to t('.find_author'), authors_path, class: 'btn btn-lg btn-outline-primary mx-2'
+          = link_to t('.find_author'), authors_path(type: :all_authors), class: 'btn btn-lg btn-outline-primary mx-2'
           = link_to t('.feed'), feeds_path, class: 'btn btn-lg btn-outline-primary mx-2'
           = link_to t('.create_post'), new_post_path, class: 'btn btn-lg btn-outline-primary mx-2'

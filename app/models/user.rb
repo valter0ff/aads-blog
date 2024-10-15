@@ -40,4 +40,5 @@ class User < ApplicationRecord
   has_many :subscribers_associations, foreign_key: :subscribed_to_id, class_name: 'Subscription', dependent: :destroy,
                                       inverse_of: :subscribed_to
   has_many :subscribers, through: :subscribers_associations, source: :subscriber
+  has_many :subscribed_to_posts, through: :subscribed_to_users, source: :posts
 end

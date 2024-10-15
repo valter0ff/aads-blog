@@ -1,7 +1,10 @@
 .p-5.mt-4.bg-light.rounded-3.shadow-sm
   .container
     %h1.text-center.text-primary= @post.title
-    %h6.text-muted.text-center= t('.author', author: @post.author)
+    %h6.text-muted.text-center
+      = t('.author')
+      = link_to @post.author, posts_path(user_id: @post.user_id), data: { turbo: false },
+        class: 'btn btn-link'
     %hr
     .mt-4
       %p= @post.body

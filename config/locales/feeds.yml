@@ -1,0 +1,6 @@
+---
+en:
+  feeds:
+    index:
+      feed: Feed
+      no_posts_found: No posts found

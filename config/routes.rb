@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   root 'homepage#index'
   resources :users, only: %i[index show], path: 'authors', as: 'authors'
   resources :posts, only: %i[new index show create]
-  resources :subscriptions, only: %i[create destroy]
+  resources :subscriptions, only: %i[index create destroy]
+  resources :feeds, only: [:index]
 end

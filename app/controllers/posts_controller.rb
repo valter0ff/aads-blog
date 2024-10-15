@@ -3,7 +3,6 @@
 class PostsController < ProtectedController
   def index
     @user = User.find_by(id: params[:user_id]) || current_user
-    # posts = params[:user_id].present? ? Post.where(user_id: params[:user_id]) : current_user.posts
     @pagy, posts = pagy(@user.posts, items: Constants::Shared::ITEMS_PER_PAGE)
     @posts = posts.decorate
   end

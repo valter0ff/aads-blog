@@ -12,6 +12,8 @@ en:
       login: Login
       logout: Logout
       my_posts: My posts
+      my_subscribers: My subscribers
+      my_subscriptions: My subscriptions
       new_post: New post
       sign_up: Sign up
       site_title: Simple Blog App

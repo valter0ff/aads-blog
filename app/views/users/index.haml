@@ -1,9 +1,11 @@
 .bg-light.py-5.my-2
-  %h2.text-center.text-primary= t('.authors')
+  %h2.text-center.text-primary
+    - users_type_key = defined?(users_type) ? users_type : 'authors'
+    = t(".#{users_type_key}")
 .mb-4
   .row.justify-content-md-center
     .col-8.text-center
-      = render 'users_table', users: @users
+      = render 'users/users_table', users: @users
     - if @pagy.pages > 1
       .col-10.justify-content-center.pagination
         != pagy_bootstrap_nav @pagy

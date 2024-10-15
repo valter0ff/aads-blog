@@ -84,7 +84,6 @@ group :development, :test do
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
-  gem 'simplecov'
 end
 
 group :development do
@@ -106,6 +105,7 @@ group :test do
   gem 'rack_session_access'
   gem 'rails-controller-testing'
   gem 'selenium-webdriver'
+  gem 'simplecov', require: false
   gem 'site_prism'
   gem 'webdrivers'
 end

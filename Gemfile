@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 ruby(File.read(File.join(File.dirname(__FILE__), '.ruby-version')).strip)
 
 # System
+gem 'ar_lazy_preload'
 gem 'bootsnap', require: false
 gem 'counter_culture'
 gem 'cssbundling-rails'
@@ -16,6 +17,9 @@ gem 'rails', '~> 7.1.4'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
+
+# ActiveRecord models as a tree
+gem 'ancestry'
 
 # Views
 gem 'haml-rails', '~> 2.0'

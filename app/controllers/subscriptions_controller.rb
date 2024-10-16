@@ -4,10 +4,7 @@ class SubscriptionsController < ProtectedController
   before_action :find_user, only: %i[create destroy]
 
   def create
-    if cant_proceed_subscription?
-      redirect_to request.referer, alert: @alert_message, status: :see_other
-      return
-    end
+    return redirect_to request.referer, alert: @alert_message, status: :see_other if cant_proceed_subscription?
 
     subscribed_to_users << @user
     redirect_to request.referer, notice: t('subscriptions.subscribed', user_name: @user.decorate.full_name)
@@ -15,8 +12,7 @@ class SubscriptionsController < ProtectedController
 
   def destroy
     unless subscribed_to_users.include?(@user)
-      redirect_to request.referer, alert: t('subscriptions.not_subscribed'), status: :see_other
-      return
+      return redirect_to request.referer, alert: t('subscriptions.not_subscribed'), status: :see_other
     end
 
     subscribed_to_users.delete(@user)

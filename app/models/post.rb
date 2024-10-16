@@ -26,5 +26,7 @@ class Post < ApplicationRecord
                    length: { maximum: Constants::Post::BODY_MAX_SIZE }
 
   belongs_to :user
+  has_many :comments, dependent: :destroy
+
   counter_culture :user
 end

@@ -21,4 +21,5 @@ en:
     show:
       author: 'Author:'
       back: Back
-      comment: comment
+      comment: Comment
+      comments: Comments

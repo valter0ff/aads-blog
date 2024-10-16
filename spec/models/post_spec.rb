@@ -53,7 +53,7 @@ RSpec.describe Post, type: :model do
   describe '#counter_culture' do
     let(:user) { create(:user) }
 
-    before { create(:post, user: user) }
+    before { create(:post, user:) }
 
     it { expect(user.reload.posts_count).to eq(1) }
   end

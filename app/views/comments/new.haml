@@ -1,0 +1,18 @@
+.p-5.mt-4.bg-light.rounded-3
+  - if @comment.parent
+    %h2.text-center.text-primary.page-title= t('.reply_to_comment')
+    = render partial: 'comments/comment', locals: { comment: @comment.parent, children: [], from_reply_form: true }
+  - else
+    %h2.text-center.text-primary.page-title= t('.new_comment')
+.mb-4
+  .row
+    .col-12
+      = simple_form_for @comment, url: post_comments_path(@post), data: { turbo: false } do |f|
+        .row.g-4.justify-content-md-center
+          .col-8
+            = f.input_field :body, as: :text, autocomplete: 'body', id: 'body', class: 'form-control body-input', placeholder: t('.enter_comment')
+            = f.full_error :body, class: 'text-danger', id: 'body-error'
+            = f.hidden_field :parent_id, value: @comment.parent_id
+          .col-8.text-center
+            = link_to t('.back'), :back, class: 'btn btn-primary back-link'
+            = f.submit t('.save'), class: 'btn btn-primary mb-35 save-btn'

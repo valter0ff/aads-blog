@@ -9,5 +9,9 @@
     .mt-4
       %p= @post.body
     .mt-4.text-center
-      = link_to t('.comment'), '#', class: 'btn btn-warning'
+      = link_to t('.comment'), new_post_comment_path(@post), class: 'btn btn-warning'
       = link_to t('.back'), :back, class: 'btn btn-secondary'
+.mt-5
+  %h3.text-center.text-primary= t('.comments')
+  - @comments.each do |comment, children|
+    = render partial: 'comments/comment', locals: { comment:, children: }

@@ -2,13 +2,15 @@
 
 require_relative 'support/config/simplecov'
 require 'spec_helper'
-ENV['RAILS_ENV'] ||= 'test'
+ENV['RAILS_ENV'] = 'test'
 require_relative '../config/environment'
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 
 require 'rspec/rails'
 
-Dir['spec/support/pages/sections/*.rb', 'spec/support/pages/helpers/*.rb'].each { |file| require Rails.root.join(file) }
+# Dir['spec/support/pages/sections/*.rb', 'spec/support/pages/helpers/*.rb'].each do |file|
+# require Rails.root.join(file)
+# end
 
 support_dir = File.join(File.dirname(__FILE__), 'support/**/*.rb')
 Dir[File.expand_path(support_dir)].each do |file|

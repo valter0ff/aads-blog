@@ -1,0 +1,12 @@
+---
+en:
+  comments:
+    comment:
+      reply: Reply
+    comment_added: Comment successfully added
+    new:
+      back: Back
+      enter_comment: Enter your comment (up to 1500 characters)
+      new_comment: New comment
+      reply_to_comment: Reply to comment
+      save: Save

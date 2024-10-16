@@ -1,0 +1,17 @@
+.comment.mt-2.shadow-sm
+  .comment-body.bg-light.p-1.rounded.shadow-sm
+    .d-flex.justify-content-between.align-items-center
+      %strong= link_to comment.user.decorate.full_name, posts_path(user_id: comment.user_id), data: { turbo: false },
+        class: 'link-dark link-offset-2 link-underline link-underline-opacity-0'
+      %small.text-muted= l(comment.created_at, format: :short)
+    %p.comment-body.ms-2= comment.body
+
+    - from_reply_form ||= nil
+    - unless from_reply_form
+      .comment-actions.mt-2
+        = link_to t('.reply'), new_post_comment_path(comment.post, parent_id: comment.id), class: 'btn btn-sm btn-link'
+
+  - if children.any?
+    .replies.mt-2.ms-4
+      - children.each do |comment, children|
+        = render partial: 'comments/comment', locals: { comment:, children: }

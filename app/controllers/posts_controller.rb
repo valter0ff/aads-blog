@@ -9,6 +9,7 @@ class PostsController < ProtectedController
 
   def show
     @post = Post.find_by(id: params[:id]).decorate
+    @comments = @post.comments.lazy_preload(:user).order(created_at: :asc).arrange
   end
 
   def new

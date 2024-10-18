@@ -8,9 +8,11 @@ RSpec.configure do |config|
     DatabaseCleaner.clean_with(:truncation)
   end
 
-  config.around do |example|
-    DatabaseCleaner.cleaning do
-      example.run
-    end
+  config.before do
+    DatabaseCleaner.start
+  end
+
+  config.after do
+    DatabaseCleaner.clean
   end
 end

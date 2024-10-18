@@ -81,3 +81,6 @@ Metrics/AbcSize:
   Max: 18
   Exclude:
     - "spec/support/pages/**/*"
+
+FactoryBot/ExcessiveCreateList:
+  MaxAmount: 20

@@ -6,18 +6,11 @@ class UsersController < ProtectedController
   def index
     users_type = params[:type].to_sym
 
-    unless ALLOWED_USER_TYPES.include?(users_type)
-      flash[:alert] = t('subscriptions.smth_went_wrong')
-      return render 'homepage/index', status: :unprocessable_entity
-    end
+    raise StandardError, t('subscriptions.smth_went_wrong') unless ALLOWED_USER_TYPES.include?(users_type)
 
     @pagy, users = pagy(select_users(users_type), items: Constants::Shared::ITEMS_PER_PAGE)
     @users = users.decorate
     render :index, locals: { users_type: }
-  end
-
-  def show
-    @user = User.find(params[:id])
   end
 
   private

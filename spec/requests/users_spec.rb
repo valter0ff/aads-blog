@@ -27,9 +27,8 @@ RSpec.describe 'Users', type: :request do
 
     context 'with an invalid user type' do
       it 'raises a StandardError and returns a 500 status' do
-        expect do
-          get authors_path(type: :invalid_type)
-        end.to raise_error(StandardError, I18n.t('subscriptions.smth_went_wrong'))
+        expect { get authors_path(type: :invalid_type) }
+          .to raise_error(StandardError, I18n.t('subscriptions.smth_went_wrong'))
       end
     end
   end
